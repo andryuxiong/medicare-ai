@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Gradle build output
+backend/.gradle/
+backend/build/
+
+# Docker artefacts (optional)
+backend/bin/
+
+# Node modules are already ignored by CRA
