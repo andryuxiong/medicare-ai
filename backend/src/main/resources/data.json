@@ -1,0 +1,62 @@
+[
+    {
+      "keywords": ["sore throat", "runny nose", "congestion"],
+      "condition": "Common cold",
+      "medication": "DayQuil / NyQuil (acetaminophen, dextromethorphan, doxylamine)",
+      "advice": "Rest, stay hydrated. See a doctor if fever > 102 °F for more than 3 days."
+    },
+    {
+      "keywords": ["headache", "nausea", "sensitivity to light"],
+      "condition": "Migraine",
+      "medication": "Excedrin Migraine (acetaminophen, aspirin, caffeine)",
+      "advice": "Lie in a dark room; avoid triggers. Seek care if vision changes."
+    },
+    {
+      "keywords": ["itchy eyes", "sneezing", "seasonal"],
+      "condition": "Allergic rhinitis",
+      "medication": "Claritin (loratadine) or Zyrtec (cetirizine)",
+      "advice": "Limit outdoor exposure on high-pollen days."
+    },
+    {
+      "keywords": ["heartburn", "acid reflux", "burning chest"],
+      "condition": "GERD",
+      "medication": "Omeprazole 20 mg OTC",
+      "advice": "Avoid late-night meals; see MD if symptoms daily."
+    },
+    {
+      "keywords": ["muscle pain", "fever", "body aches"],
+      "condition": "Flu-like illness",
+      "medication": "Ibuprofen 200 mg every 6 h (max 1 200 mg)",
+      "advice": "Hydrate; seek care if breathing difficulty."
+    },
+    {
+      "keywords": ["diarrhea", "loose stool", "cramping"],
+      "condition": "Acute gastroenteritis",
+      "medication": "Loperamide (Imodium) 2 mg",
+      "advice": "Oral rehydration; red flag = blood in stool."
+    },
+    {
+      "keywords": ["dry cough", "tickle in throat"],
+      "condition": "Irritative cough",
+      "medication": "Dextromethorphan syrup",
+      "advice": "Honey (age > 1 yr) can soothe."
+    },
+    {
+      "keywords": ["stuffy nose", "pressure cheek", "sinus"],
+      "condition": "Sinus congestion",
+      "medication": "Pseudoephedrine 60 mg (ask pharmacist)",
+      "advice": "Use max 3 days to avoid rebound."
+    },
+    {
+      "keywords": ["constipation", "hard stool"],
+      "condition": "Occasional constipation",
+      "medication": "Polyethylene glycol (MiraLAX) 17 g in water",
+      "advice": "Increase fibre; see MD if no stool in 7 days."
+    },
+    {
+      "keywords": ["sore muscles", "exercise"],
+      "condition": "DOMS (delayed-onset muscle soreness)",
+      "medication": "Topical diclofenac gel",
+      "advice": "Gentle stretching, hydration."
+    }
+  ]

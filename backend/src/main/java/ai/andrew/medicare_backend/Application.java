@@ -1,4 +1,4 @@
-package ai.andrew.medicare_backend.ai.andrew.medicare_backend;
+package ai.andrew.medicare_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
