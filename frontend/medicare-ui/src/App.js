@@ -5,6 +5,7 @@ import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognitio
 function App() {
   const [input, setInput] = useState("");
   const [chat,  setChat]  = useState([]);
+  const [lang, setLang] = useState("en")
 
   /* Hook gives us live transcript + listening flag*/
   const { transcript, listening, resetTranscript } = useSpeechRecognition();
@@ -28,6 +29,8 @@ function App() {
       resetTranscript();
     }
   }
+  
+
 
   async function send() {
     if (!input.trim()) return;
@@ -36,18 +39,18 @@ function App() {
     setChat(c => [...c, userMsg]);
     setInput("");
 
-    // call Spring backend
-    const res  = await fetch("http://localhost:8080/api/analyze", {
+    // call Spring backend with language support | API call to the backend
+    const res  = await fetch(`http://localhost:8080/api/analyze-ml?lang=${lang}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: input })
     });
     const data = await res.json();
 
+    // Handle Response
     const botMsg = data.followup
       ? { from: "bot", text: data.followup }
-      : { from: "bot",
-          text: `Condition: ${data.condition}\nMedication: ${data.medication}\nAdvice: ${data.advice}` };
+      : { from: "bot", text: data.answer };
 
     setChat(c => [...c, botMsg]);
   }
@@ -55,6 +58,17 @@ function App() {
   return (
     <main style={{maxWidth:600,margin:"2rem auto",fontFamily:"sans-serif"}}>
       <h1>Medicare AI</h1>
+
+      <div style={{marginBottom:"1rem"}}>
+        <select 
+          value={lang} 
+          onChange={e => setLang(e.target.value)}
+          style={{padding:"4px 8px"}}
+        >
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+        </select>
+      </div>
 
       <section style={{border:"1px solid #ccc",height:260,overflowY:"auto",padding:"1rem"}}>
         {chat.map((m,i) => (
@@ -65,25 +79,43 @@ function App() {
         ))}
       </section>
 
-      <input
-        value={input}
-        onChange={e => setInput(e.target.value)}
-        onKeyDown={e => e.key === "Enter" && send()}
-        placeholder="Describe how you feel…"
-        style={{width:"80%",padding:"8px"}}
-      />
-      <button onClick={send} style={{marginLeft:8,padding:"8px 16px"}}>
-        Send
-      </button>
-      {/* Hold-to-Talk Button*/}
-      <button 
-        onMouseDown={startListening}
-        onMouseUp={stopListening}
-        style={{marginLeft:8, padding:"8px 16px "}}
+      <div style={{display:"flex",gap:"8px"}}>
+        <input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onKeyDown={e => e.key === "Enter" && send()}
+          placeholder="Describe how you feel…"
+          style={{width:"80%",padding:"8px"}}
+        />
+        <button 
+          onMouseDown={startListening}
+          onMouseUp={stopListening}
+          onMouseLeave={stopListening}
+          style={{
+            padding:"8px 16px",
+            background: listening ? "#ff4444" : "#4CAF50",
+            color:"white",
+            border:"none",
+            borderRadius:"4px",
+            cursor:"pointer"
+          }}
         >
-          {listening ? "Listening..." : "Hold to talk"}
-
+          🎤
         </button>
+        <button 
+          onClick={send} 
+          style={{
+            padding:"8px 16px",
+            background:"#2196F3",
+            color:"white",
+            border:"none",
+            borderRadius:"4px",
+            cursor:"pointer"
+          }}
+        >
+          Send
+        </button>
+      </div>
     </main>
   );
 }

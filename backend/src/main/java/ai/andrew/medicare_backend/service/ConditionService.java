@@ -21,7 +21,7 @@ public class ConditionService {
         db = mapper.readValue(in, new TypeReference<>() {});
     }
 
-    public Map<String,Object> findMatch(String userText) {
+    public Map<String,Object> keywordMatch(String userText) {
         String lower = userText.toLowerCase();
         return db.stream()
                  .filter(row -> ((List<?>) row.get("keywords")).stream()
