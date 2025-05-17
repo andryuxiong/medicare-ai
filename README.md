@@ -15,7 +15,7 @@ This project is a simple full-stack application that helps users identify possib
 ### 1. Clone this repository
 
 ```bash/terminal
-git clone https://github.com/YOUR-USERNAME/medicare-ai.git
+git clone https://github.com/andryuxiong/medicare-ai.git
 cd medicare-ai
 
 ```start libretranslator(requires docker)
