@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
-// Get the backend URL from environment variable or default to localhost
-const BACKEND_URL = "https://medicare-ai.up.railway.app";
+// Get the backend URL from environment variable 
+const BACKEND_URL = "https://medicare-ai.up.railway.app/";
 
 function App() {
   const [input, setInput] = useState("");
