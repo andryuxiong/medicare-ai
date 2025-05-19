@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: medicare-ai-backend
-    env: java
-    plan: free
-    rootDir: backend
-    buildCommand: ./gradlew build
-    startCommand: ./gradlew bootRun
