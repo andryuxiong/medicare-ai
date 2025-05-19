@@ -1,5 +1,6 @@
 package ai.andrew.medicare_backend.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -13,18 +14,22 @@ import org.springframework.web.reactive.function.client.WebClient;
  *   toEnglish(text)          : any language → English
  *   fromEnglish(text, lang)  : English → target ISO 639-1 language code
  *
- * WebClient is Spring’s non-blocking HTTP client.  For simplicity we call
+ * WebClient is Spring's non-blocking HTTP client.  For simplicity we call
  * .block() here so the method returns a plain String synchronously.
  */
 @Service
 public class TranslationService {
 
-    /** Change only this constant if you move the container. */
-    private static final String BASE_URL = "https://translate.argosopentech.com";
-    
-    private final WebClient client = WebClient.builder()
-            .baseUrl(BASE_URL)
-            .build();
+    @Value("${libretranslate.url:https://libretranslate.de}")
+    private String baseUrl;
+
+    private final WebClient client;
+
+    public TranslationService() {
+        this.client = WebClient.builder()
+                .baseUrl(baseUrl)
+                .build();
+    }
 
     /* ---------- public helpers ---------- */
 
