@@ -1,6 +1,8 @@
 import { useState } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
+// Get the backend URL from environment variable or default to localhost
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8080";
 
 function App() {
   const [input, setInput] = useState("");
@@ -39,15 +41,14 @@ function App() {
     setChat(c => [...c, userMsg]);
     setInput("");
 
-    // call Spring backend with language support | API call to the backend
-    const res  = await fetch(`http://localhost:8080/api/analyze-ml?lang=${lang}`, {
+    // call Spring backend with language support
+    const res  = await fetch(`${BACKEND_URL}/api/analyze-ml?lang=${lang}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: input })
     });
     const data = await res.json();
 
-    // Handle Response
     const botMsg = data.followup
       ? { from: "bot", text: data.followup }
       : { from: "bot", text: data.answer };

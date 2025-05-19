@@ -20,8 +20,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class TranslationService {
 
     /** Change only this constant if you move the container. */
-    private static final String BASE_URL = "http://localhost:5001";
-
+    private static final String BASE_URL = "https://translate.argosopentech.com";
+    
     private final WebClient client = WebClient.builder()
             .baseUrl(BASE_URL)
             .build();
