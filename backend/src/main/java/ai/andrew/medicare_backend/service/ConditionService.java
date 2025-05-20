@@ -14,6 +14,7 @@ public class ConditionService {
 
     private List<Map<String,Object>> db;
 
+    /* This takes the .JSON file and reads the keywords to determine the user's symptoms  */
     @PostConstruct
     void init() throws Exception {
         ObjectMapper mapper = new ObjectMapper();

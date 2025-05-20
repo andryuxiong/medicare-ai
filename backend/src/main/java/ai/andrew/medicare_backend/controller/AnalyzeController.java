@@ -11,7 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://medicare-ai-git-main-andrew-xiongs-projects.vercel.app/")
 public class AnalyzeController {
 
     private final ConditionService diagnosis;
