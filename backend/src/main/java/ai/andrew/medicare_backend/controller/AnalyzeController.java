@@ -11,7 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://medicare-pwocxkolw-andrew-xiongs-projects.vercel.app")
+@CrossOrigin(origins = "https://medicare-pcrkx9tsw-andrew-xiongs-projects.vercel.app/")
 public class AnalyzeController {
 
     private final ConditionService diagnosis;
@@ -44,7 +44,7 @@ public AnalyzeController(ConditionService diagnosis,
         Map<String,Object> hit = diagnosis.keywordMatch(english);
 
         if (hit == null) {
-            String askEn = "I’m not sure yet—could you describe your symptoms in more detail?";
+            String askEn = "I'm not sure yet—could you describe your symptoms in more detail?";
             String ask   = lang.equals("en") ? askEn
                           : translator.fromEnglish(askEn, lang);
             return ResponseEntity.ok(Map.of("followup", ask));
