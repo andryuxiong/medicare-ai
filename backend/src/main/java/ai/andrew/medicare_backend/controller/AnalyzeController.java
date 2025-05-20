@@ -11,7 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://medicare-pwocxkolw-andrew-xiongs-projects.vercel.app")
+@CrossOrigin(origins = "https://medicare-ai-three.vercel.app")
 
 
 public class AnalyzeController {
