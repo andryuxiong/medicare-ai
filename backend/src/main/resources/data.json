@@ -1,62 +1,146 @@
 [
-    {
-      "keywords": ["sore throat", "runny nose", "congestion"],
-      "condition": "Common cold",
-      "medication": "DayQuil / NyQuil (acetaminophen, dextromethorphan, doxylamine)",
-      "advice": "Rest, stay hydrated. See a doctor if fever > 102 °F for more than 3 days."
-    },
-    {
-      "keywords": ["headache", "nausea", "sensitivity to light"],
-      "condition": "Migraine",
-      "medication": "Excedrin Migraine (acetaminophen, aspirin, caffeine)",
-      "advice": "Lie in a dark room; avoid triggers. Seek care if vision changes."
-    },
-    {
-      "keywords": ["itchy eyes", "sneezing", "seasonal"],
-      "condition": "Allergic rhinitis",
-      "medication": "Claritin (loratadine) or Zyrtec (cetirizine)",
-      "advice": "Limit outdoor exposure on high-pollen days."
-    },
-    {
-      "keywords": ["heartburn", "acid reflux", "burning chest"],
-      "condition": "GERD",
-      "medication": "Omeprazole 20 mg OTC",
-      "advice": "Avoid late-night meals; see MD if symptoms daily."
-    },
-    {
-      "keywords": ["muscle pain", "fever", "body aches"],
-      "condition": "Flu-like illness",
-      "medication": "Ibuprofen 200 mg every 6 h (max 1 200 mg)",
-      "advice": "Hydrate; seek care if breathing difficulty."
-    },
-    {
-      "keywords": ["diarrhea", "loose stool", "cramping"],
-      "condition": "Acute gastroenteritis",
-      "medication": "Loperamide (Imodium) 2 mg",
-      "advice": "Oral rehydration; red flag = blood in stool."
-    },
-    {
-      "keywords": ["dry cough", "tickle in throat"],
-      "condition": "Irritative cough",
-      "medication": "Dextromethorphan syrup",
-      "advice": "Honey (age > 1 yr) can soothe."
-    },
-    {
-      "keywords": ["stuffy nose", "pressure cheek", "sinus"],
-      "condition": "Sinus congestion",
-      "medication": "Pseudoephedrine 60 mg (ask pharmacist)",
-      "advice": "Use max 3 days to avoid rebound."
-    },
-    {
-      "keywords": ["constipation", "hard stool"],
-      "condition": "Occasional constipation",
-      "medication": "Polyethylene glycol (MiraLAX) 17 g in water",
-      "advice": "Increase fibre; see MD if no stool in 7 days."
-    },
-    {
-      "keywords": ["sore muscles", "exercise"],
-      "condition": "DOMS (delayed-onset muscle soreness)",
-      "medication": "Topical diclofenac gel",
-      "advice": "Gentle stretching, hydration."
-    }
-  ]
+  {
+    "keywords": ["sore throat", "runny nose", "congestion"],
+    "condition": "Common cold",
+    "medication": "DayQuil / NyQuil (acetaminophen, dextromethorphan, doxylamine)",
+    "advice": "Rest, stay hydrated. See a doctor if fever > 102 °F for more than 3 days."
+  },
+  {
+    "keywords": ["headache", "nausea", "sensitivity to light"],
+    "condition": "Migraine",
+    "medication": "Excedrin Migraine (acetaminophen, aspirin, caffeine)",
+    "advice": "Lie in a dark room; avoid triggers. Seek care if vision changes."
+  },
+  {
+    "keywords": ["itchy eyes", "sneezing", "seasonal"],
+    "condition": "Allergic rhinitis",
+    "medication": "Claritin (loratadine) or Zyrtec (cetirizine)",
+    "advice": "Limit outdoor exposure on high-pollen days."
+  },
+  {
+    "keywords": ["heartburn", "acid reflux", "burning chest"],
+    "condition": "GERD",
+    "medication": "Omeprazole 20 mg OTC",
+    "advice": "Avoid late-night meals; see MD if symptoms daily."
+  },
+  {
+    "keywords": ["muscle pain", "fever", "body aches"],
+    "condition": "Flu-like illness",
+    "medication": "Ibuprofen 200 mg every 6 h (max 1 200 mg)",
+    "advice": "Hydrate; seek care if breathing difficulty."
+  },
+  {
+    "keywords": ["diarrhea", "loose stool", "cramping"],
+    "condition": "Acute gastroenteritis",
+    "medication": "Loperamide (Imodium) 2 mg",
+    "advice": "Oral rehydration; red flag = blood in stool."
+  },
+  {
+    "keywords": ["dry cough", "tickle in throat"],
+    "condition": "Irritative cough",
+    "medication": "Dextromethorphan syrup",
+    "advice": "Honey (age > 1 yr) can soothe."
+  },
+  {
+    "keywords": ["stuffy nose", "pressure cheek", "sinus"],
+    "condition": "Sinus congestion",
+    "medication": "Pseudoephedrine 60 mg (ask pharmacist)",
+    "advice": "Use max 3 days to avoid rebound."
+  },
+  {
+    "keywords": ["constipation", "hard stool"],
+    "condition": "Occasional constipation",
+    "medication": "Polyethylene glycol (MiraLAX) 17 g in water",
+    "advice": "Increase fibre; see MD if no stool in 7 days."
+  },
+  {
+    "keywords": ["sore muscles", "exercise"],
+    "condition": "DOMS (delayed-onset muscle soreness)",
+    "medication": "Topical diclofenac gel",
+    "advice": "Gentle stretching, hydration."
+  },
+  {
+    "keywords": ["chest pain", "shortness of breath", "sweating", "jaw pain"],
+    "condition": "Possible heart attack",
+    "medication": "Call 911 immediately",
+    "advice": "Go to the emergency room right now."
+  },
+  {
+    "keywords": ["rash", "itching", "hives"],
+    "condition": "Allergic reaction",
+    "medication": "Antihistamines (Benadryl, Claritin)",
+    "advice": "Seek care if swelling of lips/tongue or trouble breathing."
+  },
+  {
+    "keywords": ["joint pain", "swelling", "redness"],
+    "condition": "Arthritis flare",
+    "medication": "Ibuprofen or naproxen",
+    "advice": "Rest joint, ice, see doctor if severe."
+  },
+  {
+    "keywords": ["frequent urination", "burning urination", "cloudy urine"],
+    "condition": "Urinary tract infection (UTI)",
+    "medication": "Phenazopyridine for pain, see doctor for antibiotics",
+    "advice": "Increase fluids; see doctor if fever or back pain."
+  },
+  {
+    "keywords": ["dizziness", "fainting", "lightheaded"],
+    "condition": "Low blood pressure or dehydration",
+    "medication": "Oral rehydration",
+    "advice": "Lie down, elevate legs, hydrate. Seek care if persistent."
+  },
+  {
+    "keywords": ["wheezing", "shortness of breath", "cough"],
+    "condition": "Asthma exacerbation",
+    "medication": "Albuterol inhaler",
+    "advice": "Use inhaler; seek care if not improving."
+  },
+  {
+    "keywords": ["back pain", "stiffness", "muscle spasm"],
+    "condition": "Acute back strain",
+    "medication": "Ibuprofen, heat/ice",
+    "advice": "Gentle movement, avoid heavy lifting."
+  },
+  {
+    "keywords": ["nausea", "vomiting", "abdominal pain"],
+    "condition": "Gastroenteritis or food poisoning",
+    "medication": "Oral rehydration, bismuth subsalicylate (Pepto-Bismol)",
+    "advice": "Hydrate; seek care if blood in vomit or severe pain."
+  },
+  {
+    "keywords": ["swollen ankle", "pain after injury", "bruising"],
+    "condition": "Ankle sprain",
+    "medication": "Rest, ice, compression, elevation (RICE)",
+    "advice": "Avoid weight-bearing; see doctor if unable to walk."
+  },
+  {
+    "keywords": ["fever", "stiff neck", "sensitivity to light", "headache"],
+    "condition": "Possible meningitis",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["weight loss", "night sweats", "persistent cough"],
+    "condition": "Possible tuberculosis",
+    "medication": "See doctor for testing",
+    "advice": "Seek medical evaluation."
+  },
+  {
+    "keywords": ["palpitations", "racing heart", "anxiety"],
+    "condition": "Possible panic attack or arrhythmia",
+    "medication": "Deep breathing, see doctor if persistent",
+    "advice": "If chest pain or fainting, seek emergency care."
+  },
+  {
+    "keywords": ["leg swelling", "redness", "warmth", "pain"],
+    "condition": "Possible blood clot (DVT)",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["vision loss", "eye pain", "flashing lights"],
+    "condition": "Possible retinal detachment",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  }
+]
