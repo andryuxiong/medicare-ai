@@ -419,7 +419,9 @@ function App() {
                 }}>You</span>
               )}
               {/* Render the message text as Markdown for both user and bot */}
-              <ReactMarkdown>{m.text}</ReactMarkdown>
+              <div className="chat-message">
+                <ReactMarkdown>{m.text}</ReactMarkdown>
+              </div>
             </div>
           ))}
           {/* Show a typing indicator when the bot is responding */}

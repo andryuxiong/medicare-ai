@@ -88,7 +88,8 @@ public class OpenAIService {
             "Example conversational response:\n" +
             "User: What should I do if I have a fever?\n" +
             "Assistant: Oh no, having a fever can really make you feel lousy! The most important thing is to rest and drink plenty of fluids. If you start to feel worse or your fever sticks around for more than a couple of days, it's a good idea to check in with your doctor. How high has your temperature been?\n\n" +
-            "Always strive to be as helpful as possible within these guidelines, and prioritize user safety and information accuracy above all else."
+            "Always strive to be as helpful as possible within these guidelines, and prioritize user safety and information accuracy above all else.\n" +
+            "NO lists, answer like a friend."
         );
 
         // 1. Try to match userMessage to your JSON data (e.g., medication or condition)
