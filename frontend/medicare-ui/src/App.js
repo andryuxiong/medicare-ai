@@ -2,10 +2,10 @@ import { useState, useRef, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
 // Get the backend URL from environment variable
-// const BACKEND_URL = "https://medicare-ai.up.railway.app"; // (no trailing slash)
+const BACKEND_URL = process.env.REACT_APP_API_URL || "https://medicare-ai.up.railway.app/api";
 
 // Testing on local machine
-const BACKEND_URL = "http://localhost:8080";
+//const BACKEND_URL = "http://localhost:8080";
 
 // Add a list of quick suggestion questions
 const SUGGESTIONS = [
@@ -166,7 +166,7 @@ function App() {
     setInput("");
 
     try {
-      const res = await fetch(`${BACKEND_URL}/api/chat-combined`, {
+      const res = await fetch(`${BACKEND_URL}/chat-combined`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMsg.text })
@@ -177,7 +177,7 @@ function App() {
           ...c,
           {
             from: "bot",
-            text: "Sorry, I couldn't reach the AI service. Please try again later."
+            text: "Sorry, I couldn't reach the Bot. Please try again later."
           }
         ]);
         setIsBotTyping(false);
@@ -212,7 +212,7 @@ function App() {
         ...c,
         {
           from: "bot",
-          text: "Sorry, something went wrong. Please try again later."
+          text: "Sorry, something went wrong. Please try again later 😔"
         }
       ]);
       setIsBotTyping(false);
