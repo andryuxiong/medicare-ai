@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 // Get the backend URL from environment variable
 
@@ -421,6 +422,7 @@ function App() {
               {/* Render the message text as Markdown for both user and bot */}
               <div className="chat-message">
                 <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
                   components={{
                     strong: ({node, ...props}) => <strong {...props} />,
                     em: ({node, ...props}) => <em {...props} />,
