@@ -420,7 +420,21 @@ function App() {
               )}
               {/* Render the message text as Markdown for both user and bot */}
               <div className="chat-message">
-                <ReactMarkdown>{m.text}</ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    strong: ({node, ...props}) => <strong {...props} />,
+                    em: ({node, ...props}) => <em {...props} />,
+                    a: ({node, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer" />,
+                    ul: ({node, ...props}) => <ul {...props} />,
+                    ol: ({node, ...props}) => <ol {...props} />,
+                    li: ({node, ...props}) => <li {...props} />,
+                    p: ({node, ...props}) => <p {...props} />,
+                    code: ({node, inline, ...props}) => 
+                      inline ? <code {...props} /> : <pre><code {...props} /></pre>,
+                  }}
+                >
+                  {m.text}
+                </ReactMarkdown>
               </div>
             </div>
           ))}
