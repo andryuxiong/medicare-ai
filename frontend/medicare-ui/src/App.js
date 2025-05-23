@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
 // Get the backend URL from environment variable
+
+// The fetch call will append '/api/chat-combined' to this base URL.
 const BACKEND_URL = process.env.REACT_APP_API_URL || "https://medicare-ai.up.railway.app";
 console.log("Current BACKEND_URL:", BACKEND_URL);
 
@@ -164,6 +166,8 @@ function App() {
     setInput("");
 
     try {
+      // The backend endpoint is at /api/chat-combined, so we append it here.
+      // If BACKEND_URL already ends with /api, this would result in a double /api/api/chat-combined (which is incorrect!)
       console.log("Sending request to:", `${BACKEND_URL}/api/chat-combined`);
       const res = await fetch(`${BACKEND_URL}/api/chat-combined`, {
         method: "POST",
