@@ -1,7 +1,10 @@
 package ai.andrew.medicare_backend.controller;
 
+import ai.andrew.medicare_backend.dto.ChatRequest;
 import ai.andrew.medicare_backend.service.OpenAIService;
 import ai.andrew.medicare_backend.service.ConditionService;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
@@ -23,13 +26,17 @@ public class ChatController {
 
     /**
      * POST /api/chat-hf (legacy endpoint, now uses OpenAI)
-     * Accepts a JSON body with a "message" field and returns the AI's response.
+     * Accepts a validated chat request and returns the AI's response.
      */
     @PostMapping("/chat-hf")
-    public Map<String, String> chatWithOpenAI(@RequestBody Map<String, String> body) {
-        String userMessage = body.getOrDefault("message", "");
-        String response = openaiService.getChatResponse(userMessage);
-        return Map.of("response", response);
+    public ResponseEntity<Map<String, String>> chatWithOpenAI(@Valid @RequestBody ChatRequest request) {
+        try {
+            String response = openaiService.getChatResponse(request.getMessage());
+            return ResponseEntity.ok(Map.of("response", response));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError()
+                .body(Map.of("error", "Failed to process request: " + e.getMessage()));
+        }
     }
 
     /**
@@ -37,18 +44,22 @@ public class ChatController {
      * Returns both the conversational AI response and the symptom checker result.
      */
     @PostMapping("/chat-combined")
-    public Map<String, Object> chatCombined(@RequestBody Map<String, String> body) {
-        String userMessage = body.getOrDefault("message", "");
-        String aiResponse = openaiService.getChatResponse(userMessage);
-        Map<String, Object> symptomResult = conditionService.keywordMatch(userMessage);
+    public ResponseEntity<Map<String, Object>> chatCombined(@Valid @RequestBody ChatRequest request) {
+        try {
+            String aiResponse = openaiService.getChatResponse(request.getMessage());
+            Map<String, Object> symptomResult = conditionService.keywordMatch(request.getMessage());
 
-        // Map.of() does not allow null values, so ensure neither value is null
-        if (aiResponse == null) aiResponse = "";
-        if (symptomResult == null) symptomResult = Map.of();
+            // Map.of() does not allow null values, so ensure neither value is null
+            if (aiResponse == null) aiResponse = "";
+            if (symptomResult == null) symptomResult = Map.of();
 
-        return Map.of(
-            "aiResponse", aiResponse,
-            "symptomResult", symptomResult
-        );
+            return ResponseEntity.ok(Map.of(
+                "aiResponse", aiResponse,
+                "symptomResult", symptomResult
+            ));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError()
+                .body(Map.of("error", "Failed to process request: " + e.getMessage()));
+        }
     }
 } 
