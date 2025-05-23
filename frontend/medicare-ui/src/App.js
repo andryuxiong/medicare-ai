@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import ReactMarkdown from 'react-markdown';
 
 // Get the backend URL from environment variable
 
@@ -418,7 +419,8 @@ function App() {
                   letterSpacing: 0.5,
                 }}>You</span>
               )}
-              {m.text}
+              {/* Render the message text as Markdown for both user and bot */}
+              <ReactMarkdown>{m.text}</ReactMarkdown>
             </div>
           ))}
           {/* Show a typing indicator when the bot is responding */}
