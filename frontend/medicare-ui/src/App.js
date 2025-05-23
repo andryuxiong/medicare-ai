@@ -146,10 +146,10 @@ function App() {
     card: '#232946',
     cardBorder: '6px solid',
     cardBorderImage: 'linear-gradient(180deg, #f6c90e 0%, #232946 100%) 1',
-    cardShadow: '0 8px 32px 0 rgba(246, 201, 14, 0.10)',
+    cardShadow: '0 8px 32px 0 rgba(246, 201, 14, 0.1)',
     header: '#f6c90e',
-    bubbleBot: '#2e3350', // darker for better contrast
-    bubbleUser: '#f6c90e',
+    bubbleBot: 'rgba(46, 51, 80, 0.8)',
+    bubbleUser: 'rgba(246, 201, 14, 0.15)',
     text: '#f4f4f4',
     label: '#f6c90e',
     inputBg: '#393e46',
@@ -383,61 +383,72 @@ function App() {
               className="chat-bubble"
               style={{
                 alignSelf: m.from === 'bot' ? 'flex-start' : 'flex-end',
-                maxWidth: '90%', // More width for mobile
+                maxWidth: '90%',
                 background: m.from === 'bot' ? palette.bubbleBot : palette.bubbleUser,
-                color: theme === 'dark' ? (m.from === 'bot' ? '#f4f4f4' : '#232946') : palette.text, // Better contrast in dark mode
+                color: theme === 'dark' ? (m.from === 'bot' ? '#f4f4f4' : '#232946') : palette.text,
                 borderRadius: m.from === 'bot' ? '20px 20px 20px 8px' : '20px 20px 8px 20px',
-                padding: '0.95em 1.2em', // More padding
-                marginBottom: '12px', // Increased spacing between messages
-                boxShadow: '0 4px 16px 0 rgba(31,38,135,0.10)', // Softer, larger shadow
+                padding: '0.95em 1.2em',
+                marginBottom: '16px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
                 opacity: 1,
-                animation: 'popIn 0.4s', // Pop animation
-                transition: 'background 0.2s, transform 0.15s',
+                animation: 'messageAppear 0.3s ease',
+                transition: 'all 0.2s ease',
                 fontSize: '1.08em',
                 wordBreak: 'break-word',
                 display: 'flex',
-                alignItems: 'flex-start', // Changed from center to flex-start
+                alignItems: 'flex-start',
                 gap: m.from === 'bot' ? '0.7em' : 0,
                 fontFamily: 'Quicksand, sans-serif',
                 position: 'relative',
-                flexDirection: 'row', // Changed from column to row
+                flexDirection: 'row',
+                '&:hover': {
+                  transform: 'translateY(-1px)',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.12)'
+                }
               }}
             >
-              {/* Show a friendly bot avatar for bot messages, nothing else */}
+              {/* Show a friendly bot avatar for bot messages */}
               {m.from === 'bot' && (
-                // Use a universally friendly emoji for the bot avatar
-                <span style={{fontSize:'1.3em', animation:'botBounce 0.7s', marginTop: '0.2em'}}>😊</span>
+                <span style={{
+                  fontSize: '1.2em',
+                  animation: 'botBounce 0.7s',
+                  position: 'absolute',
+                  left: '-2.8em',
+                  top: '0.2em',
+                  background: 'rgba(255,255,255,0.9)',
+                  borderRadius: '50%',
+                  padding: '4px',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}>😊</span>
               )}
               <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
-                {/* Show 'You' as a label above user messages, never inline */}
                 {m.from === 'user' && (
                   <span style={{
                     fontWeight: 600,
                     fontSize: '0.92em',
-                    color: palette.label,
+                    color: theme === 'dark' ? '#ffffff' : palette.label,
                     marginBottom: 2,
                     alignSelf: 'flex-end',
                     letterSpacing: 0.5,
+                    textShadow: theme === 'dark' ? '0 1px 2px rgba(0,0,0,0.3)' : 'none'
                   }}>You</span>
                 )}
-                {/* Render the message text as Markdown for both user and bot */}
                 <div className="chat-message">
                   <ReactMarkdown>{m.text}</ReactMarkdown>
                 </div>
               </div>
             </div>
           ))}
-          {/* Show a typing indicator when the bot is responding */}
           {isBotTyping && (
-            <div className="chat-bubble" style={{
+            <div className="typing-indicator" style={{
               alignSelf: 'flex-start',
               maxWidth: '60%',
-              background: palette.bubbleBot,
-              color: theme === 'dark' ? '#f4f4f4' : palette.header, // Better contrast in dark mode
-              borderRadius: '20px 20px 20px 8px',
-              padding: '0.85em 1.1em',
+              background: 'rgba(227, 242, 253, 0.6)',
+              backdropFilter: 'blur(4px)',
+              borderRadius: '12px',
+              padding: '8px 12px',
               marginBottom: '2px',
-              boxShadow: '0 2px 8px 0 rgba(31,38,135,0.10)',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
               fontSize: '1.08em',
               display: 'flex',
               alignItems: 'center',
@@ -445,9 +456,7 @@ function App() {
               fontFamily: 'Quicksand, sans-serif',
               opacity: 0.8,
             }}>
-              {/* Use the same friendly bot avatar for typing indicator */}
               <span style={{fontSize:'1.3em', animation:'botBounce 0.7s'}}>😊</span>
-              {/* Animated typing indicator: bouncing dots */}
               <span className="typing-dots" style={{display:'inline-block', minWidth:32}}>
                 <span className="dot" style={{animationDelay:'0s'}}>.</span>
                 <span className="dot" style={{animationDelay:'0.15s'}}>.</span>
@@ -522,7 +531,8 @@ function App() {
               width:"80%",
               padding:"14px",
               borderRadius:14,
-              border:'1.5px solid #b6e2d3',
+              border: '1px solid',
+              borderImage: 'linear-gradient(45deg, #1976d2, #b6e2d3) 1',
               fontSize:'1.08em',
               outline:'none',
               background: palette.inputBg,
@@ -530,7 +540,11 @@ function App() {
               minWidth:120,
               fontFamily:'Quicksand, sans-serif',
               color: palette.text,
-              transition: 'background 0.4s, color 0.4s',
+              transition: 'all 0.2s ease',
+              '&:focus': {
+                boxShadow: '0 0 0 2px rgba(25, 118, 210, 0.2)',
+                borderColor: '#1976d2'
+              }
             }}
           />
           <button 
@@ -627,14 +641,15 @@ function App() {
           from { color: #b6b6b6; }
           to { color: #1976d2; }
         }
-        @keyframes popIn {
-          0% { opacity: 0; transform: scale(0.95) translateY(10px); }
-          80% { opacity: 1; transform: scale(1.03) translateY(-2px); }
-          100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
+        @keyframes messageAppear {
+          0% { 
+            opacity: 0;
+            transform: translateY(10px) scale(0.98);
+          }
+          100% { 
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
         }
         @keyframes botBounce {
           0% { transform: translateY(0); }
@@ -691,6 +706,13 @@ function App() {
         @keyframes bounceDot {
           0%, 80%, 100% { transform: translateY(0); opacity: 0.7; }
           40% { transform: translateY(-7px); opacity: 1; }
+        }
+        button {
+          transition: all 0.2s ease;
+        }
+        button:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
       `}</style>
     </main>
