@@ -388,7 +388,7 @@ function App() {
                 color: theme === 'dark' ? (m.from === 'bot' ? '#f4f4f4' : '#232946') : palette.text, // Better contrast in dark mode
                 borderRadius: m.from === 'bot' ? '20px 20px 20px 8px' : '20px 20px 8px 20px',
                 padding: '0.95em 1.2em', // More padding
-                marginBottom: '8px', // More space between bubbles
+                marginBottom: '12px', // Increased spacing between messages
                 boxShadow: '0 4px 16px 0 rgba(31,38,135,0.10)', // Softer, larger shadow
                 opacity: 1,
                 animation: 'popIn 0.4s', // Pop animation
@@ -396,32 +396,34 @@ function App() {
                 fontSize: '1.08em',
                 wordBreak: 'break-word',
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'flex-start', // Changed from center to flex-start
                 gap: m.from === 'bot' ? '0.7em' : 0,
                 fontFamily: 'Quicksand, sans-serif',
                 position: 'relative',
-                flexDirection: 'column',
+                flexDirection: 'row', // Changed from column to row
               }}
             >
               {/* Show a friendly bot avatar for bot messages, nothing else */}
               {m.from === 'bot' && (
                 // Use a universally friendly emoji for the bot avatar
-                <span style={{fontSize:'1.3em', animation:'botBounce 0.7s'}}>😊</span>
+                <span style={{fontSize:'1.3em', animation:'botBounce 0.7s', marginTop: '0.2em'}}>😊</span>
               )}
-              {/* Show 'You' as a label above user messages, never inline */}
-              {m.from === 'user' && (
-                <span style={{
-                  fontWeight: 600,
-                  fontSize: '0.92em',
-                  color: palette.label,
-                  marginBottom: 2,
-                  alignSelf: 'flex-end',
-                  letterSpacing: 0.5,
-                }}>You</span>
-              )}
-              {/* Render the message text as Markdown for both user and bot */}
-              <div className="chat-message">
-                <ReactMarkdown>{m.text}</ReactMarkdown>
+              <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
+                {/* Show 'You' as a label above user messages, never inline */}
+                {m.from === 'user' && (
+                  <span style={{
+                    fontWeight: 600,
+                    fontSize: '0.92em',
+                    color: palette.label,
+                    marginBottom: 2,
+                    alignSelf: 'flex-end',
+                    letterSpacing: 0.5,
+                  }}>You</span>
+                )}
+                {/* Render the message text as Markdown for both user and bot */}
+                <div className="chat-message">
+                  <ReactMarkdown>{m.text}</ReactMarkdown>
+                </div>
               </div>
             </div>
           ))}
