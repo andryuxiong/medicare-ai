@@ -380,45 +380,73 @@ function App() {
           {chat.map((m,i) => (
             <div
               key={i}
-              className={`chat-bubble ${m.from === 'bot' ? 'bot' : 'user'}`}
+              className="chat-bubble"
+              style={{
+                alignSelf: m.from === 'bot' ? 'flex-start' : 'flex-end',
+                maxWidth: '90%', // More width for mobile
+                background: m.from === 'bot' ? palette.bubbleBot : palette.bubbleUser,
+                color: theme === 'dark' ? (m.from === 'bot' ? '#f4f4f4' : '#232946') : palette.text, // Better contrast in dark mode
+                borderRadius: m.from === 'bot' ? '20px 20px 20px 8px' : '20px 20px 8px 20px',
+                padding: '0.95em 1.2em', // More padding
+                marginBottom: '8px', // More space between bubbles
+                boxShadow: '0 4px 16px 0 rgba(31,38,135,0.10)', // Softer, larger shadow
+                opacity: 1,
+                animation: 'popIn 0.4s', // Pop animation
+                transition: 'background 0.2s, transform 0.15s',
+                fontSize: '1.08em',
+                wordBreak: 'break-word',
+                display: 'flex',
+                alignItems: 'center',
+                gap: m.from === 'bot' ? '0.7em' : 0,
+                fontFamily: 'Quicksand, sans-serif',
+                position: 'relative',
+                flexDirection: 'column',
+              }}
             >
+              {/* Show a friendly bot avatar for bot messages, nothing else */}
               {m.from === 'bot' && (
-                <span style={{fontSize:'1.3em', animation:'botBounce 0.7s', marginBottom: '0.5rem'}}>😊</span>
+                // Use a universally friendly emoji for the bot avatar
+                <span style={{fontSize:'1.3em', animation:'botBounce 0.7s'}}>😊</span>
               )}
+              {/* Show 'You' as a label above user messages, never inline */}
               {m.from === 'user' && (
                 <span style={{
                   fontWeight: 600,
                   fontSize: '0.92em',
                   color: palette.label,
-                  marginBottom: '0.5rem',
+                  marginBottom: 2,
                   alignSelf: 'flex-end',
                   letterSpacing: 0.5,
                 }}>You</span>
               )}
+              {/* Render the message text as Markdown for both user and bot */}
               <div className="chat-message">
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    strong: ({node, ...props}) => <strong {...props} />,
-                    em: ({node, ...props}) => <em {...props} />,
-                    a: ({node, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer" />,
-                    ul: ({node, ...props}) => <ul {...props} />,
-                    ol: ({node, ...props}) => <ol {...props} />,
-                    li: ({node, ...props}) => <li {...props} />,
-                    p: ({node, ...props}) => <p {...props} />,
-                    code: ({node, inline, ...props}) => 
-                      inline ? <code {...props} /> : <pre><code {...props} /></pre>,
-                  }}
-                >
-                  {m.text}
-                </ReactMarkdown>
+                <ReactMarkdown>{m.text}</ReactMarkdown>
               </div>
             </div>
           ))}
+          {/* Show a typing indicator when the bot is responding */}
           {isBotTyping && (
-            <div className="typing-indicator">
+            <div className="chat-bubble" style={{
+              alignSelf: 'flex-start',
+              maxWidth: '60%',
+              background: palette.bubbleBot,
+              color: theme === 'dark' ? '#f4f4f4' : palette.header, // Better contrast in dark mode
+              borderRadius: '20px 20px 20px 8px',
+              padding: '0.85em 1.1em',
+              marginBottom: '2px',
+              boxShadow: '0 2px 8px 0 rgba(31,38,135,0.10)',
+              fontSize: '1.08em',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.7em',
+              fontFamily: 'Quicksand, sans-serif',
+              opacity: 0.8,
+            }}>
+              {/* Use the same friendly bot avatar for typing indicator */}
               <span style={{fontSize:'1.3em', animation:'botBounce 0.7s'}}>😊</span>
-              <span className="typing-dots">
+              {/* Animated typing indicator: bouncing dots */}
+              <span className="typing-dots" style={{display:'inline-block', minWidth:32}}>
                 <span className="dot" style={{animationDelay:'0s'}}>.</span>
                 <span className="dot" style={{animationDelay:'0.15s'}}>.</span>
                 <span className="dot" style={{animationDelay:'0.3s'}}>.</span>

@@ -46,32 +46,22 @@ public class ChatController {
      * Returns both the conversational AI response and the symptom checker result.
      */
     @PostMapping("/chat-combined")
-    public ResponseEntity<Map<String, Object>> chatCombined(@RequestBody Map<String, String> request) {
-        String message = request.get("message");
-        Map<String, Object> response = new HashMap<>();
-        
-        // Get AI response
-        String aiResponse = openaiService.getChatResponse(message);
-        response.put("aiResponse", aiResponse);
-        
-        // Only get symptom checker result if the message contains potential symptoms
-        if (message.toLowerCase().contains("symptom") || 
-            message.toLowerCase().contains("feel") || 
-            message.toLowerCase().contains("hurts") || 
-            message.toLowerCase().contains("pain")) {
+    public ResponseEntity<Map<String, Object>> chatCombined(@Valid @RequestBody ChatRequest request) {
+        try {
+            String aiResponse = openaiService.getChatResponse(request.getMessage());
+            Map<String, Object> symptomResult = conditionService.keywordMatch(request.getMessage());
             
-            Map<String, String> symptomResult = conditionService.keywordMatch(message);
-            
-            // Only include symptom result if we have meaningful data
-            if (symptomResult != null && 
-                (symptomResult.get("condition") != null || 
-                 symptomResult.get("medication") != null || 
-                 symptomResult.get("advice") != null)) {
-                
-                response.put("symptomResult", symptomResult);
-            }
+            // Map.of() does not allow null values, so ensure neither value is null
+            if (aiResponse == null) aiResponse = "";
+            if (symptomResult == null) symptomResult = Map.of();
+
+            return ResponseEntity.ok(Map.of(
+                "aiResponse", aiResponse,
+                "symptomResult", symptomResult
+            ));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError()
+                .body(Map.of("error", "Failed to process request: " + e.getMessage()));
         }
-        
-        return ResponseEntity.ok(response);
     }
 } 

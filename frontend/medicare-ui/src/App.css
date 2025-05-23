@@ -102,50 +102,39 @@ main {
 }
 
 /* Chat message markdown styling */
-.chat-message {
-  width: 100%;
-  line-height: 1.6;
-  font-size: 1.05em;
-}
-
 .chat-message strong {
-  color: #1976d2 !important;
-  font-weight: 700 !important;
-  background: linear-gradient(90deg, #b6e2d3 0%, #1976d2 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  padding: 0 2px;
+  color: #1976d2;
+  font-weight: 700;
+  background: linear-gradient(90deg, #b6e2d3 0%, #1976d2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .chat-message em {
-  color: #388e3c !important;
-  font-style: italic !important;
-  padding: 0 2px;
+  color: #388e3c;
+  font-style: italic;
 }
 
 .chat-message a {
-  color: #f6c90e !important;
-  text-decoration: underline !important;
-  font-weight: 600 !important;
-  padding: 0 2px;
+  color: #f6c90e;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .chat-message ul, 
 .chat-message ol {
-  margin: 0.8em 0 0.8em 1.5em !important;
-  padding: 0 !important;
-  list-style-position: inside !important;
+  margin: 0.5em 0 0.5em 1.5em;
+  padding: 0;
 }
 
 .chat-message li {
-  margin-bottom: 0.5em !important;
-  font-size: 1.05em !important;
-  list-style-type: disc !important;
+  margin-bottom: 0.3em;
+  font-size: 1.05em;
 }
 
 .chat-message p {
-  margin: 0.8em 0 !important;
-  line-height: 1.6 !important;
+  margin: 0.5em 0;
+  line-height: 1.5;
 }
 
 .chat-message code {
