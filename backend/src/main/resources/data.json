@@ -142,5 +142,431 @@
     "condition": "Possible retinal detachment",
     "medication": "Seek emergency care",
     "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["fatigue", "muscle weakness", "weight gain"],
+    "condition": "Hypothyroidism",
+    "medication": "Levothyroxine (Synthroid)",
+    "advice": "See doctor for blood tests; take medication as prescribed."
+  },
+  {
+    "keywords": ["blurred vision", "frequent urination", "excessive thirst"],
+    "condition": "Diabetes mellitus",
+    "medication": "Metformin, insulin (as prescribed)",
+    "advice": "Monitor blood sugar; follow diet and exercise plan."
+  },
+  {
+    "keywords": ["chest tightness", "cough", "mucus production"],
+    "condition": "Chronic bronchitis",
+    "medication": "Albuterol inhaler, mucolytics",
+    "advice": "Avoid smoking; see doctor if symptoms worsen."
+  },
+  {
+    "keywords": ["joint stiffness", "morning stiffness", "fatigue"],
+    "condition": "Rheumatoid arthritis",
+    "medication": "Methotrexate, biologics (as prescribed)",
+    "advice": "Regular exercise; see rheumatologist for management."
+  },
+  {
+    "keywords": ["abdominal bloating", "gas", "diarrhea"],
+    "condition": "Irritable bowel syndrome (IBS)",
+    "medication": "Antispasmodics, fiber supplements",
+    "advice": "Identify trigger foods; consider low-FODMAP diet."
+  },
+  {
+    "keywords": ["memory loss", "confusion", "mood changes"],
+    "condition": "Possible dementia",
+    "medication": "See doctor for evaluation",
+    "advice": "Seek medical evaluation; consider cognitive testing."
+  },
+  {
+    "keywords": ["severe headache", "vomiting", "confusion"],
+    "condition": "Possible stroke",
+    "medication": "Call 911 immediately",
+    "advice": "Go to the emergency room right now."
+  },
+  {
+    "keywords": ["yellowing of skin", "dark urine", "abdominal pain"],
+    "condition": "Possible liver disease",
+    "medication": "See doctor for evaluation",
+    "advice": "Seek medical evaluation; avoid alcohol."
+  },
+  {
+    "keywords": ["seizures", "loss of consciousness", "confusion"],
+    "condition": "Epilepsy",
+    "medication": "Antiepileptic drugs (as prescribed)",
+    "advice": "Take medication as prescribed; avoid triggers."
+  },
+  {
+    "keywords": ["severe abdominal pain", "fever", "nausea"],
+    "condition": "Possible appendicitis",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["persistent cough", "blood in sputum", "chest pain"],
+    "condition": "Lung cancer",
+    "medication": "See oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["abdominal pain", "jaundice", "weight loss"],
+    "condition": "Pancreatic cancer",
+    "medication": "See oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["frequent urination at night", "weak stream", "difficulty starting urination"],
+    "condition": "Benign prostatic hyperplasia (BPH)",
+    "medication": "Tamsulosin, finasteride (as prescribed)",
+    "advice": "See urologist for management."
+  },
+  {
+    "keywords": ["sudden vision loss", "eye pain", "halos around lights"],
+    "condition": "Acute angle-closure glaucoma",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["tremor", "slowed movement", "shuffling gait"],
+    "condition": "Parkinson's disease",
+    "medication": "Levodopa/carbidopa (as prescribed)",
+    "advice": "See neurologist for management."
+  },
+  {
+    "keywords": ["chronic diarrhea", "weight loss", "abdominal pain"],
+    "condition": "Celiac disease",
+    "medication": "Gluten-free diet",
+    "advice": "Avoid gluten-containing foods."
+  },
+  {
+    "keywords": ["easy bruising", "bleeding gums", "fatigue"],
+    "condition": "Leukemia",
+    "medication": "See oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["shortness of breath", "swelling in legs", "fatigue"],
+    "condition": "Congestive heart failure",
+    "medication": "Diuretics, ACE inhibitors (as prescribed)",
+    "advice": "Monitor weight; see doctor for management."
+  },
+  {
+    "keywords": ["persistent fever", "night sweats", "weight loss"],
+    "condition": "Lymphoma",
+    "medication": "See oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["difficulty swallowing", "heartburn", "chest pain"],
+    "condition": "Esophageal cancer",
+    "medication": "See oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["abdominal pain", "blood in stool", "weight loss"],
+    "condition": "Colon cancer",
+    "medication": "See oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["bone pain", "frequent fractures", "fatigue"],
+    "condition": "Osteoporosis",
+    "medication": "Bisphosphonates, calcium/vitamin D",
+    "advice": "Weight-bearing exercise; see doctor for management."
+  },
+  {
+    "keywords": ["persistent cough", "wheezing", "shortness of breath"],
+    "condition": "Chronic obstructive pulmonary disease (COPD)",
+    "medication": "Inhaled bronchodilators, steroids",
+    "advice": "Avoid smoking; see doctor for management."
+  },
+  {
+    "keywords": ["severe headache", "vision changes", "nausea"],
+    "condition": "Brain tumor",
+    "medication": "See neurologist or oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["abdominal pain", "vomiting", "bloody stool"],
+    "condition": "Intestinal obstruction",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["painful urination", "blood in urine", "flank pain"],
+    "condition": "Kidney stones",
+    "medication": "Pain management, hydration",
+    "advice": "Strain urine; see doctor if fever or severe pain."
+  },
+  {
+    "keywords": ["sudden severe chest pain", "shortness of breath", "coughing blood"],
+    "condition": "Pulmonary embolism",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["persistent hoarseness", "sore throat", "difficulty swallowing"],
+    "condition": "Laryngeal cancer",
+    "medication": "See oncologist for evaluation",
+    "advice": "Seek medical evaluation for persistent symptoms."
+  },
+  {
+    "keywords": ["abdominal pain", "nausea", "yellowing of skin"],
+    "condition": "Hepatitis",
+    "medication": "See doctor for evaluation",
+    "advice": "Avoid alcohol; seek medical evaluation."
+  },
+  {
+    "keywords": ["muscle weakness", "double vision", "drooping eyelids"],
+    "condition": "Myasthenia gravis",
+    "medication": "Pyridostigmine, immunosuppressants (as prescribed)",
+    "advice": "See neurologist for management."
+  },
+  {
+    "keywords": ["persistent cough", "weight loss", "night sweats"],
+    "condition": "Tuberculosis",
+    "medication": "Isoniazid, rifampin (as prescribed)",
+    "advice": "Take medication as prescribed; see doctor for management."
+  },
+  {
+    "keywords": ["sudden severe headache", "stiff neck", "fever"],
+    "condition": "Subarachnoid hemorrhage",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["chronic cough", "night sweats", "weight loss"],
+    "condition": "Histoplasmosis",
+    "medication": "Antifungal medication (as prescribed)",
+    "advice": "See infectious disease specialist."
+  },
+  {
+    "keywords": ["muscle pain", "dark urine", "weakness"],
+    "condition": "Rhabdomyolysis",
+    "medication": "IV fluids in hospital",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["abdominal pain", "vomiting", "high blood sugar"],
+    "condition": "Diabetic ketoacidosis",
+    "medication": "IV fluids, insulin in hospital",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["joint pain", "butterfly rash", "fatigue"],
+    "condition": "Systemic lupus erythematosus (SLE)",
+    "medication": "Hydroxychloroquine, steroids (as prescribed)",
+    "advice": "See rheumatologist for management."
+  },
+  {
+    "keywords": ["abdominal pain", "bloody diarrhea", "weight loss"],
+    "condition": "Ulcerative colitis",
+    "medication": "Mesalamine, steroids (as prescribed)",
+    "advice": "See gastroenterologist for management."
+  },
+  {
+    "keywords": ["abdominal pain", "diarrhea", "weight loss"],
+    "condition": "Crohn's disease",
+    "medication": "Immunosuppressants, steroids (as prescribed)",
+    "advice": "See gastroenterologist for management."
+  },
+  {
+    "keywords": ["chest pain", "palpitations", "shortness of breath"],
+    "condition": "Atrial fibrillation",
+    "medication": "Anticoagulants, rate control (as prescribed)",
+    "advice": "See cardiologist for management."
+  },
+  {
+    "keywords": ["leg pain", "ulcers", "swelling"],
+    "condition": "Chronic venous insufficiency",
+    "medication": "Compression stockings, leg elevation",
+    "advice": "See vascular specialist for management."
+  },
+  {
+    "keywords": ["sudden vision loss", "eye pain", "redness"],
+    "condition": "Optic neuritis",
+    "medication": "Steroids (as prescribed)",
+    "advice": "See neurologist or ophthalmologist."
+  },
+  {
+    "keywords": ["muscle cramps", "twitching", "weakness"],
+    "condition": "Electrolyte imbalance",
+    "medication": "Electrolyte replacement",
+    "advice": "See doctor for evaluation."
+  },
+  {
+    "keywords": ["persistent cough", "night sweats", "weight loss"],
+    "condition": "Nontuberculous mycobacterial infection",
+    "medication": "Antibiotics (as prescribed)",
+    "advice": "See infectious disease specialist."
+  },
+  {
+    "keywords": ["abdominal pain", "vomiting", "distended abdomen"],
+    "condition": "Bowel obstruction",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["joint pain", "redness", "fever"],
+    "condition": "Septic arthritis",
+    "medication": "IV antibiotics in hospital",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["muscle weakness", "difficulty breathing", "double vision"],
+    "condition": "Guillain-Barré syndrome",
+    "medication": "IVIG, plasmapheresis (in hospital)",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["persistent cough", "weight loss", "hemoptysis"],
+    "condition": "Bronchiectasis",
+    "medication": "Airway clearance, antibiotics (as prescribed)",
+    "advice": "See pulmonologist for management."
+  },
+  {
+    "keywords": ["abdominal pain", "vomiting", "high amylase"],
+    "condition": "Acute pancreatitis",
+    "medication": "IV fluids, pain control in hospital",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["muscle pain", "fever", "rash"],
+    "condition": "Rocky Mountain spotted fever",
+    "medication": "Doxycycline (as prescribed)",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["chest pain", "shortness of breath", "fainting"],
+    "condition": "Aortic dissection",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["abdominal pain", "jaundice", "itching"],
+    "condition": "Primary sclerosing cholangitis",
+    "medication": "See gastroenterologist for management",
+    "advice": "Seek medical evaluation."
+  },
+  {
+    "keywords": ["facial droop", "arm weakness", "slurred speech"],
+    "condition": "Acute ischemic stroke",
+    "medication": "Seek emergency care",
+    "advice": "Call 911 immediately."
+  },
+  {
+    "keywords": ["chest pain", "sweating", "nausea"],
+    "condition": "Unstable angina",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["abdominal pain", "shoulder pain", "missed period"],
+    "condition": "Ectopic pregnancy",
+    "medication": "Seek emergency care",
+    "advice": "Go to the ER immediately."
+  },
+  {
+    "keywords": ["sudden vision loss", "jaw pain", "scalp tenderness"],
+    "condition": "Temporal arteritis (giant cell arteritis)",
+    "medication": "Steroids (as prescribed)",
+    "advice": "See doctor urgently."
+  },
+  {
+    "keywords": ["fever", "rash", "joint pain"],
+    "condition": "Parvovirus B19 infection",
+    "medication": "Supportive care",
+    "advice": "See doctor if symptoms persist."
+  },
+  {
+    "keywords": ["muscle pain", "weakness", "elevated CK"],
+    "condition": "Polymyositis",
+    "medication": "Steroids, immunosuppressants (as prescribed)",
+    "advice": "See rheumatologist for management."
+  },
+  {
+    "keywords": ["abdominal pain", "vomiting", "bloody diarrhea"],
+    "condition": "Ischemic colitis",
+    "medication": "IV fluids, supportive care",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["chronic cough", "weight loss", "night sweats"],
+    "condition": "Sarcoidosis",
+    "medication": "Steroids (as prescribed)",
+    "advice": "See pulmonologist for management."
+  },
+  {
+    "keywords": ["abdominal pain", "jaundice", "pale stools"],
+    "condition": "Biliary atresia",
+    "medication": "Surgery (as indicated)",
+    "advice": "See pediatric surgeon for evaluation."
+  },
+  {
+    "keywords": ["muscle weakness", "fatigue", "cramps"],
+    "condition": "Hypokalemia",
+    "medication": "Potassium replacement",
+    "advice": "See doctor for evaluation."
+  },
+  {
+    "keywords": ["joint pain", "morning stiffness", "rash"],
+    "condition": "Juvenile idiopathic arthritis",
+    "medication": "NSAIDs, DMARDs (as prescribed)",
+    "advice": "See pediatric rheumatologist."
+  },
+  {
+    "keywords": ["abdominal pain", "vomiting", "high lipase"],
+    "condition": "Chronic pancreatitis",
+    "medication": "Pain management, enzyme replacement",
+    "advice": "See gastroenterologist for management."
+  },
+  {
+    "keywords": ["muscle pain", "dark urine", "fatigue"],
+    "condition": "Hemolytic uremic syndrome",
+    "medication": "Hospitalization, supportive care",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["chest pain", "shortness of breath", "palpitations"],
+    "condition": "Pericarditis",
+    "medication": "NSAIDs, colchicine (as prescribed)",
+    "advice": "See cardiologist for management."
+  },
+  {
+    "keywords": ["abdominal pain", "vomiting", "bloody stool"],
+    "condition": "Intussusception",
+    "medication": "Hospitalization, possible surgery",
+    "advice": "Seek emergency care."
+  },
+  {
+    "keywords": ["muscle weakness", "difficulty swallowing", "ptosis"],
+    "condition": "Lambert-Eaton myasthenic syndrome",
+    "medication": "Immunosuppressants, 3,4-diaminopyridine (as prescribed)",
+    "advice": "See neurologist for management."
+  },
+  {
+    "keywords": ["chronic cough", "wheezing", "dyspnea"],
+    "condition": "Bronchial asthma",
+    "medication": "Inhaled corticosteroids, bronchodilators",
+    "advice": "See doctor for management."
+  },
+  {
+    "keywords": ["abdominal pain", "weight loss", "diarrhea"],
+    "condition": "Whipple's disease",
+    "medication": "Antibiotics (as prescribed)",
+    "advice": "See infectious disease specialist."
+  },
+  {
+    "keywords": ["muscle pain", "fever", "swelling"],
+    "condition": "Cellulitis",
+    "medication": "Antibiotics (as prescribed)",
+    "advice": "See doctor for management."
+  },
+  {
+    "keywords": ["chest pain", "shortness of breath", "cough"],
+    "condition": "Pneumonia",
+    "medication": "Antibiotics (as prescribed)",
+    "advice": "See doctor for management."
   }
 ]

@@ -4,6 +4,7 @@ import ai.andrew.medicare_backend.dto.SymptomRequest;
 import ai.andrew.medicare_backend.service.ConditionService;
 import ai.andrew.medicare_backend.service.TranslationService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,19 +12,18 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://medicare-ai-three.vercel.app")
-
+//@CrossOrigin(origins = "https://medicare-ai-three.vercel.app")
+@CrossOrigin(origins = "http://localhost:3002") // <-- Add this line
 
 public class AnalyzeController {
 
-    private final ConditionService diagnosis;
+    private final ConditionService conditionService;
     private final TranslationService translator;
 
-
-public AnalyzeController(ConditionService diagnosis,
-                         TranslationService translator) {
-    this.diagnosis  = diagnosis;
-    this.translator = translator;
+    @Autowired
+    public AnalyzeController(ConditionService conditionService, TranslationService translator) {
+        this.conditionService = conditionService;
+        this.translator = translator;
     }
 
     /* ---------- existing /api/analyze (English only) stays here ---------- */
@@ -43,7 +43,7 @@ public AnalyzeController(ConditionService diagnosis,
                 : translator.toEnglish(req.text());
 
         // 2) Keyword diagnosis
-        Map<String,Object> hit = diagnosis.keywordMatch(english);
+        Map<String,Object> hit = conditionService.keywordMatch(english);
 
         if (hit == null) {
             String askEn = "I'm not sure yet—could you describe your symptoms in more detail?";

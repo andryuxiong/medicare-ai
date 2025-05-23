@@ -12,4 +12,4 @@ spring.web.cors.allowed-headers=*
 libretranslate.url=${LIBRETRANSLATE_URL:https://libretranslate.de}
 
 # OpenAI API key for GPT-3.5 Turbo integration
-openai.api.key=${OPENAI_API_KEY}
+openai.api.key=${OPENAI_API_KEY} 

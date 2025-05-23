@@ -9,3 +9,20 @@ backend/build/
 backend/bin/
 
 # Node modules are already ignored by CRA
+
+# Environment files
+.env
+.env.local
+.env.*.local
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+logs/
