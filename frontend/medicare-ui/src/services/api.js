@@ -3,7 +3,8 @@
  * This service handles all communication with the backend API endpoints.
  */
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
+// const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api'; // for testing
+const API_BASE_URL = 'https://medicare-ai.up.railway.app/api';
 
 /**
  * Sends a message to the chat-combined endpoint

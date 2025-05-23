@@ -12,8 +12,8 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-//@CrossOrigin(origins = "https://medicare-ai-three.vercel.app")
-@CrossOrigin(origins = "http://localhost:3002") // <-- Add this line
+@CrossOrigin(origins = "https://medicare-ai-three.vercel.app") // for deployment
+//@CrossOrigin(origins = "http://localhost:3002") // local testing
 
 public class AnalyzeController {
 
