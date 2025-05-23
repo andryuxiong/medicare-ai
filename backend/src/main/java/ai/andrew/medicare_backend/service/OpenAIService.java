@@ -112,7 +112,7 @@ public class OpenAIService {
         );
 
         Map<String, Object> payload = new HashMap<>();
-        payload.put("model", "gpt-3.5-turbo-0613"); // function calling supported
+        payload.put("model", "gpt-3.5-turbo"); // function calling supported
         payload.put("messages", messages);
         payload.put("functions", List.of(symptomCheckerFunction));
         payload.put("function_call", "auto");
