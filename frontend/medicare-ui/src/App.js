@@ -401,6 +401,7 @@ function App() {
                 fontFamily: 'Quicksand, sans-serif',
                 position: 'relative',
                 flexDirection: 'row',
+                marginLeft: m.from === 'bot' ? '2.5em' : 0,
                 '&:hover': {
                   transform: 'translateY(-1px)',
                   boxShadow: '0 4px 12px rgba(0,0,0,0.12)'
@@ -413,12 +414,13 @@ function App() {
                   fontSize: '1.2em',
                   animation: 'botBounce 0.7s',
                   position: 'absolute',
-                  left: '-2.8em',
+                  left: '-2.5em',
                   top: '0.2em',
                   background: 'rgba(255,255,255,0.9)',
                   borderRadius: '50%',
                   padding: '4px',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                  zIndex: 1
                 }}>😊</span>
               )}
               <div style={{display: 'flex', flexDirection: 'column', flex: 1}}>
@@ -448,6 +450,7 @@ function App() {
               borderRadius: '12px',
               padding: '8px 12px',
               marginBottom: '2px',
+              marginLeft: '2.5em',
               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
               fontSize: '1.08em',
               display: 'flex',
@@ -455,8 +458,20 @@ function App() {
               gap: '0.7em',
               fontFamily: 'Quicksand, sans-serif',
               opacity: 0.8,
+              position: 'relative'
             }}>
-              <span style={{fontSize:'1.3em', animation:'botBounce 0.7s'}}>😊</span>
+              <span style={{
+                fontSize: '1.2em',
+                animation: 'botBounce 0.7s',
+                position: 'absolute',
+                left: '-2.5em',
+                top: '0.2em',
+                background: 'rgba(255,255,255,0.9)',
+                borderRadius: '50%',
+                padding: '4px',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                zIndex: 1
+              }}>😊</span>
               <span className="typing-dots" style={{display:'inline-block', minWidth:32}}>
                 <span className="dot" style={{animationDelay:'0s'}}>.</span>
                 <span className="dot" style={{animationDelay:'0.15s'}}>.</span>
