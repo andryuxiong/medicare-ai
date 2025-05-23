@@ -399,7 +399,6 @@ function App() {
                 gap: m.from === 'bot' ? '0.7em' : 0,
                 fontFamily: 'Quicksand, sans-serif',
                 position: 'relative',
-                whiteSpace: 'pre-line',
                 flexDirection: 'column',
               }}
             >
