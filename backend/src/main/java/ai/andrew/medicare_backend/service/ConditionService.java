@@ -30,4 +30,13 @@ public class ConditionService {
                  .findFirst()
                  .orElse(null);
     }
+
+    // Returns a description or relevant context for the user's message
+    public String getContextForUserMessage(String userMessage) {
+        Map<String, Object> match = keywordMatch(userMessage);
+        if (match != null && match.get("description") != null) {
+            return match.get("description").toString();
+        }
+        return "";
+    }
 }
