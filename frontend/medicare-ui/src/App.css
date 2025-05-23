@@ -72,10 +72,40 @@ main {
   }
 }
 
+/* Chat message styling */
+.chat-bubble {
+  max-width: 85%;
+  margin: 1rem 0;
+  padding: 1.2rem 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  line-height: 1.6;
+}
+
+.chat-bubble.bot {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  margin-right: auto;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.chat-bubble.user {
+  background: linear-gradient(135deg, #b6e2d3 0%, #a5d6a7 100%);
+  margin-left: auto;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.chat-bubble:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Chat message markdown styling */
 .chat-message {
   width: 100%;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 1.05em;
 }
 
 .chat-message strong {
@@ -102,25 +132,25 @@ main {
 
 .chat-message ul, 
 .chat-message ol {
-  margin: 0.5em 0 0.5em 1.5em !important;
+  margin: 0.8em 0 0.8em 1.5em !important;
   padding: 0 !important;
   list-style-position: inside !important;
 }
 
 .chat-message li {
-  margin-bottom: 0.3em !important;
+  margin-bottom: 0.5em !important;
   font-size: 1.05em !important;
   list-style-type: disc !important;
 }
 
 .chat-message p {
-  margin: 0.5em 0 !important;
-  line-height: 1.5 !important;
+  margin: 0.8em 0 !important;
+  line-height: 1.6 !important;
 }
 
 .chat-message code {
   background: rgba(25, 118, 210, 0.1) !important;
-  padding: 2px 4px !important;
+  padding: 2px 6px !important;
   border-radius: 4px !important;
   font-family: monospace !important;
 }
@@ -130,5 +160,27 @@ main {
   padding: 1em !important;
   border-radius: 8px !important;
   overflow-x: auto !important;
-  margin: 0.5em 0 !important;
+  margin: 0.8em 0 !important;
+}
+
+/* Chat container styling */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Typing indicator styling */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(227, 242, 253, 0.8);
+  border-radius: 1rem;
+  margin: 0.5rem 0;
 }
