@@ -51,14 +51,22 @@ public class ChatController {
             String aiResponse = openaiService.getChatResponse(request.getMessage());
             Map<String, Object> symptomResult = conditionService.keywordMatch(request.getMessage());
             
-            // Map.of() does not allow null values, so ensure neither value is null
-            if (aiResponse == null) aiResponse = "";
-            if (symptomResult == null) symptomResult = Map.of();
+            // Only include symptom result if we have meaningful data
+            if (symptomResult == null || 
+                (symptomResult.get("condition") == null && 
+                 symptomResult.get("medication") == null && 
+                 symptomResult.get("advice") == null)) {
+                symptomResult = null;
+            }
 
-            return ResponseEntity.ok(Map.of(
-                "aiResponse", aiResponse,
-                "symptomResult", symptomResult
-            ));
+            // Create response with AI response and symptom result (if any)
+            Map<String, Object> response = new HashMap<>();
+            response.put("aiResponse", aiResponse != null ? aiResponse : "");
+            if (symptomResult != null) {
+                response.put("symptomResult", symptomResult);
+            }
+
+            return ResponseEntity.ok(response);
         } catch (Exception e) {
             return ResponseEntity.internalServerError()
                 .body(Map.of("error", "Failed to process request: " + e.getMessage()));
