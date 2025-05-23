@@ -3,6 +3,7 @@ import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognitio
 
 // Get the backend URL from environment variable
 const BACKEND_URL = process.env.REACT_APP_API_URL || "https://medicare-ai.up.railway.app/api";
+const BACKEND_URL = "https://medicare-ai.up.railway.app"; 
 
 // Testing on local machine
 //const BACKEND_URL = "http://localhost:8080";
