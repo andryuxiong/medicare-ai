@@ -16,7 +16,25 @@ A full-stack healthcare assistant that helps users identify possible conditions 
 - 🔒 Secure API key management
 - 🚀 Fast and reliable performance
 
+## What will I probably work on in the future for this project
 > **Note:** Bilingual support (English/Spanish) is currently disabled as the translation service is turned off.
+ - Will add support translation services in future
+ - Still adding more health databases to help with context, a bigger database means the AI uses less tokens and instead uses pure data from backend
+ - Add better UX ie. user history to keep track and add context to the assistant
+ - Mobile App using react native 
+ - Add better support for follow-up questions and conversational aspects of the assistant
+
+ ## What was difficult for this project?
+_ API integration - integrating multiple API's like openAI or web speech was pretty difficult while trying to maintain real-time performance and handling various edge cases. Took a lot of testing lol
+
+- Managing state interactions between voice input, ai processing, and UI updates while also mainting the smooth UX causing a lot of errors and bug fixes.
+
+- There were a lot of API handling failures, network failures, I did a lot of testing on local development for it to work and then after deploying it just to not work :/ 
+
+- Had to fix invalid inputs and change prompts as the prompts wouldnt output correctly or wasnt to my liking.
+
+- Also deploying both frontend and backend so they both can work together was pretty difficult as sometime the frontend wouldnt call the backend correctly
+
 
 ## 🛠️ Tech Stack
 
@@ -31,10 +49,6 @@ A full-stack healthcare assistant that helps users identify possible conditions 
   - OpenAI API Integration
   - RESTful API Architecture
 
-- **DevOps:**
-  - Environment Variable Management
-  - CORS Configuration
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -44,6 +58,7 @@ A full-stack healthcare assistant that helps users identify possible conditions 
 - OpenAI API key
 
 ### Installation
+**Note: ** This is only for local development
 
 1. **Clone the repository**
    ```bash
@@ -75,7 +90,6 @@ A full-stack healthcare assistant that helps users identify possible conditions 
    npm install
    npm start
    ```
-
 ## 🔧 Environment Configuration
 
 ### Backend Environment Variables
@@ -107,10 +121,6 @@ The application is configured for deployment on:
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
