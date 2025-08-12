@@ -83,7 +83,9 @@ function App() {
     if (chat.length > 1 && chat[chat.length-1].from === 'bot') {
       const audio = new Audio(POP_SOUND_URL);
       audio.volume = 0.5; // Increased volume for clarity (adjust as needed)
-      audio.play();
+      audio.play().catch(() => {
+        // Audio autoplay blocked - this is expected behavior
+      });
     }
   }, [chat]);
 

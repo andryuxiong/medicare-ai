@@ -1,102 +1,311 @@
 [
   {
-    "keywords": ["sore throat", "runny nose", "congestion"],
+    "keywords": ["sore throat", "runny nose", "congestion", "stuffy nose", "cold symptoms"],
     "condition": "Common cold",
-    "medication": "DayQuil / NyQuil (acetaminophen, dextromethorphan, doxylamine)",
-    "advice": "Rest, stay hydrated. See a doctor if fever > 102 °F for more than 3 days."
+    "severity": "mild",
+    "category": "respiratory",
+    "medication": [
+      {
+        "name": "DayQuil/NyQuil",
+        "ingredients": ["acetaminophen", "dextromethorphan", "doxylamine"],
+        "dosage": "Follow package instructions",
+        "warnings": ["Do not exceed recommended dose", "Avoid alcohol"]
+      }
+    ],
+    "advice": "Rest, stay hydrated, use humidifier. Most colds resolve in 7-10 days.",
+    "red_flags": ["fever > 102°F for 3+ days", "difficulty breathing", "severe headache", "ear pain"],
+    "duration": "7-10 days",
+    "description": "Viral upper respiratory infection causing nasal congestion, sore throat, and general discomfort."
   },
   {
-    "keywords": ["headache", "nausea", "sensitivity to light"],
+    "keywords": ["headache", "nausea", "sensitivity to light", "migraine", "throbbing head"],
     "condition": "Migraine",
-    "medication": "Excedrin Migraine (acetaminophen, aspirin, caffeine)",
-    "advice": "Lie in a dark room; avoid triggers. Seek care if vision changes."
+    "severity": "moderate",
+    "category": "neurological",
+    "medication": [
+      {
+        "name": "Excedrin Migraine",
+        "ingredients": ["acetaminophen", "aspirin", "caffeine"],
+        "dosage": "2 tablets every 6 hours, max 8 tablets in 24 hours",
+        "warnings": ["Do not use with other NSAIDs", "Limit caffeine intake"]
+      }
+    ],
+    "advice": "Rest in dark, quiet room. Apply cold compress. Identify and avoid triggers.",
+    "red_flags": ["sudden severe headache", "vision changes", "weakness", "confusion", "fever with stiff neck"],
+    "duration": "4-72 hours if untreated",
+    "description": "Severe headache disorder often accompanied by nausea, vomiting, and light sensitivity."
   },
   {
-    "keywords": ["itchy eyes", "sneezing", "seasonal"],
+    "keywords": ["itchy eyes", "sneezing", "seasonal", "allergies", "watery eyes", "hay fever"],
     "condition": "Allergic rhinitis",
-    "medication": "Claritin (loratadine) or Zyrtec (cetirizine)",
-    "advice": "Limit outdoor exposure on high-pollen days."
+    "severity": "mild",
+    "category": "allergic",
+    "medication": [
+      {
+        "name": "Claritin (loratadine)",
+        "dosage": "10mg once daily",
+        "warnings": ["May cause drowsiness in some people"]
+      },
+      {
+        "name": "Zyrtec (cetirizine)",
+        "dosage": "10mg once daily",
+        "warnings": ["May cause drowsiness"]
+      }
+    ],
+    "advice": "Limit outdoor exposure during high pollen days. Keep windows closed. Shower after being outdoors.",
+    "red_flags": ["difficulty breathing", "wheezing", "severe swelling"],
+    "duration": "Seasonal or year-round depending on triggers",
+    "description": "Allergic reaction to airborne substances like pollen, dust, or pet dander."
   },
   {
-    "keywords": ["heartburn", "acid reflux", "burning chest"],
-    "condition": "GERD",
-    "medication": "Omeprazole 20 mg OTC",
-    "advice": "Avoid late-night meals; see MD if symptoms daily."
+    "keywords": ["heartburn", "acid reflux", "burning chest", "stomach acid", "GERD"],
+    "condition": "Gastroesophageal Reflux Disease (GERD)",
+    "severity": "mild-moderate",
+    "category": "gastrointestinal",
+    "medication": [
+      {
+        "name": "Omeprazole (Prilosec OTC)",
+        "dosage": "20mg once daily before eating",
+        "warnings": ["Take 30-60 minutes before first meal", "Course should not exceed 14 days without doctor consultation"]
+      }
+    ],
+    "advice": "Avoid large meals, spicy foods, alcohol. Don't lie down for 3 hours after eating. Raise head of bed.",
+    "red_flags": ["chest pain", "difficulty swallowing", "unexplained weight loss", "vomiting blood"],
+    "duration": "Chronic condition requiring lifestyle management",
+    "description": "Stomach acid flows back into the esophagus, causing heartburn and potential tissue damage."
   },
   {
-    "keywords": ["muscle pain", "fever", "body aches"],
+    "keywords": ["muscle pain", "fever", "body aches", "flu", "chills", "fatigue"],
     "condition": "Flu-like illness",
-    "medication": "Ibuprofen 200 mg every 6 h (max 1 200 mg)",
-    "advice": "Hydrate; seek care if breathing difficulty."
+    "severity": "moderate",
+    "category": "viral",
+    "medication": [
+      {
+        "name": "Ibuprofen (Advil, Motrin)",
+        "dosage": "200-400mg every 6-8 hours",
+        "warnings": ["Maximum 1200mg per day", "Take with food", "Do not use if allergic to NSAIDs"]
+      },
+      {
+        "name": "Acetaminophen (Tylenol)",
+        "dosage": "500-1000mg every 6-8 hours",
+        "warnings": ["Maximum 3000mg per day", "Avoid alcohol"]
+      }
+    ],
+    "advice": "Rest, increase fluid intake, use humidifier. Consider flu shot for prevention.",
+    "red_flags": ["difficulty breathing", "chest pain", "persistent vomiting", "signs of dehydration"],
+    "duration": "7-14 days",
+    "description": "Viral infection causing systemic symptoms including fever, body aches, and respiratory symptoms."
   },
   {
-    "keywords": ["diarrhea", "loose stool", "cramping"],
+    "keywords": ["diarrhea", "loose stool", "cramping", "stomach upset", "gastroenteritis"],
     "condition": "Acute gastroenteritis",
-    "medication": "Loperamide (Imodium) 2 mg",
-    "advice": "Oral rehydration; red flag = blood in stool."
+    "severity": "mild-moderate",
+    "category": "gastrointestinal",
+    "medication": [
+      {
+        "name": "Loperamide (Imodium)",
+        "dosage": "2mg after each loose stool, max 8mg per day",
+        "warnings": ["Do not use if fever present", "Do not use for more than 2 days"]
+      }
+    ],
+    "advice": "Stay hydrated with clear fluids. Eat bland foods (BRAT diet). Avoid dairy temporarily.",
+    "red_flags": ["blood in stool", "high fever", "signs of dehydration", "severe abdominal pain"],
+    "duration": "3-7 days",
+    "description": "Inflammation of the stomach and intestines causing diarrhea, cramping, and nausea."
   },
   {
-    "keywords": ["dry cough", "tickle in throat"],
+    "keywords": ["dry cough", "tickle in throat", "persistent cough", "throat irritation"],
     "condition": "Irritative cough",
-    "medication": "Dextromethorphan syrup",
-    "advice": "Honey (age > 1 yr) can soothe."
+    "severity": "mild",
+    "category": "respiratory",
+    "medication": [
+      {
+        "name": "Dextromethorphan (Robitussin DM)",
+        "dosage": "15mg every 4 hours",
+        "warnings": ["Do not exceed 120mg per day", "May cause drowsiness"]
+      }
+    ],
+    "advice": "Honey can soothe throat (not for children under 1 year). Stay hydrated. Use humidifier.",
+    "red_flags": ["cough with blood", "difficulty breathing", "chest pain", "cough lasting > 3 weeks"],
+    "duration": "1-3 weeks",
+    "description": "Persistent cough due to throat irritation from various causes including viral infections or allergies."
   },
   {
-    "keywords": ["stuffy nose", "pressure cheek", "sinus"],
+    "keywords": ["stuffy nose", "pressure cheek", "sinus", "facial pressure", "sinusitis"],
     "condition": "Sinus congestion",
-    "medication": "Pseudoephedrine 60 mg (ask pharmacist)",
-    "advice": "Use max 3 days to avoid rebound."
+    "severity": "mild-moderate",
+    "category": "respiratory",
+    "medication": [
+      {
+        "name": "Pseudoephedrine (Sudafed)",
+        "dosage": "60mg every 6 hours",
+        "warnings": ["Available behind pharmacy counter", "Do not use for more than 3 days", "May raise blood pressure"]
+      }
+    ],
+    "advice": "Use saline nasal rinse. Apply warm compresses. Stay hydrated.",
+    "red_flags": ["severe facial pain", "fever", "vision changes", "symptoms worsening after 7 days"],
+    "duration": "7-14 days",
+    "description": "Inflammation and congestion of the sinus cavities causing pressure and discomfort."
   },
   {
-    "keywords": ["constipation", "hard stool"],
+    "keywords": ["constipation", "hard stool", "difficulty bowel movement"],
     "condition": "Occasional constipation",
-    "medication": "Polyethylene glycol (MiraLAX) 17 g in water",
-    "advice": "Increase fibre; see MD if no stool in 7 days."
+    "severity": "mild",
+    "category": "gastrointestinal",
+    "medication": [
+      {
+        "name": "Polyethylene glycol (MiraLAX)",
+        "dosage": "17g in 8oz water daily",
+        "warnings": ["May take 2-4 days to work", "Increase gradually if needed"]
+      }
+    ],
+    "advice": "Increase fiber intake, drink more water, exercise regularly. Add prunes or fiber supplements.",
+    "red_flags": ["no bowel movement for 7+ days", "severe abdominal pain", "vomiting", "blood in stool"],
+    "duration": "Should resolve within 3-7 days",
+    "description": "Difficulty passing stool due to dehydration, low fiber diet, or lifestyle factors."
   },
   {
-    "keywords": ["sore muscles", "exercise"],
-    "condition": "DOMS (delayed-onset muscle soreness)",
-    "medication": "Topical diclofenac gel",
-    "advice": "Gentle stretching, hydration."
+    "keywords": ["sore muscles", "exercise", "muscle aches", "DOMS", "workout pain"],
+    "condition": "Delayed-onset muscle soreness (DOMS)",
+    "severity": "mild",
+    "category": "musculoskeletal",
+    "medication": [
+      {
+        "name": "Ibuprofen (Advil)",
+        "dosage": "200-400mg every 6-8 hours as needed",
+        "warnings": ["Take with food", "Do not exceed 1200mg daily"]
+      }
+    ],
+    "advice": "Gentle stretching, light activity, adequate hydration, warm bath, massage.",
+    "red_flags": ["severe swelling", "inability to move muscle", "dark colored urine"],
+    "duration": "24-72 hours after exercise",
+    "description": "Muscle pain and stiffness occurring 12-24 hours after unaccustomed or intense exercise."
   },
   {
-    "keywords": ["chest pain", "shortness of breath", "sweating", "jaw pain"],
-    "condition": "Possible heart attack",
-    "medication": "Call 911 immediately",
-    "advice": "Go to the emergency room right now."
+    "keywords": ["chest pain", "shortness of breath", "sweating", "jaw pain", "heart attack"],
+    "condition": "EMERGENCY: Possible heart attack",
+    "severity": "emergency",
+    "category": "cardiac",
+    "medication": [
+      {
+        "name": "CALL 911 IMMEDIATELY",
+        "dosage": "Emergency services",
+        "warnings": ["Do not drive yourself", "Chew aspirin if not allergic"]
+      }
+    ],
+    "advice": "SEEK IMMEDIATE EMERGENCY CARE. Do not delay.",
+    "red_flags": ["This IS a red flag situation - call 911"],
+    "duration": "Emergency situation",
+    "description": "Life-threatening condition requiring immediate medical attention."
   },
   {
-    "keywords": ["rash", "itching", "hives"],
-    "condition": "Allergic reaction",
-    "medication": "Antihistamines (Benadryl, Claritin)",
-    "advice": "Seek care if swelling of lips/tongue or trouble breathing."
+    "keywords": ["rash", "itching", "hives", "skin irritation", "allergic reaction"],
+    "condition": "Allergic skin reaction",
+    "severity": "mild-moderate",
+    "category": "allergic",
+    "medication": [
+      {
+        "name": "Benadryl (diphenhydramine)",
+        "dosage": "25-50mg every 6-8 hours",
+        "warnings": ["May cause drowsiness", "Do not drive"]
+      },
+      {
+        "name": "Hydrocortisone cream",
+        "dosage": "Apply thin layer 2-3 times daily",
+        "warnings": ["For external use only", "Do not use on face without doctor approval"]
+      }
+    ],
+    "advice": "Avoid known allergens, cool compresses, loose clothing, oatmeal baths.",
+    "red_flags": ["difficulty breathing", "swelling of face/lips/tongue", "widespread rash", "fever"],
+    "duration": "3-7 days with treatment",
+    "description": "Skin reaction to allergens causing redness, itching, and possible hives."
   },
   {
-    "keywords": ["joint pain", "swelling", "redness"],
+    "keywords": ["joint pain", "swelling", "redness", "arthritis", "stiff joints"],
     "condition": "Arthritis flare",
-    "medication": "Ibuprofen or naproxen",
-    "advice": "Rest joint, ice, see doctor if severe."
+    "severity": "mild-moderate",
+    "category": "musculoskeletal",
+    "medication": [
+      {
+        "name": "Ibuprofen (Advil, Motrin)",
+        "dosage": "200-400mg every 6-8 hours",
+        "warnings": ["Take with food", "Maximum 1200mg daily"]
+      }
+    ],
+    "advice": "Rest affected joint, apply ice for 15-20 minutes several times daily, gentle range of motion.",
+    "red_flags": ["severe joint deformity", "inability to bear weight", "fever", "red streaks"],
+    "duration": "3-7 days with treatment",
+    "description": "Inflammation of joints causing pain, stiffness, and reduced mobility."
   },
   {
-    "keywords": ["frequent urination", "burning urination", "cloudy urine"],
+    "keywords": ["frequent urination", "burning urination", "cloudy urine", "UTI", "bladder infection"],
     "condition": "Urinary tract infection (UTI)",
-    "medication": "Phenazopyridine for pain, see doctor for antibiotics",
-    "advice": "Increase fluids; see doctor if fever or back pain."
+    "severity": "moderate",
+    "category": "urological",
+    "medication": [
+      {
+        "name": "Phenazopyridine (AZO)",
+        "dosage": "200mg three times daily for pain relief",
+        "warnings": ["For symptom relief only", "See doctor for antibiotics", "May turn urine orange"]
+      }
+    ],
+    "advice": "Increase fluid intake, urinate frequently, cranberry juice may help. See doctor for antibiotics.",
+    "red_flags": ["fever", "back pain", "vomiting", "blood in urine"],
+    "duration": "Requires antibiotic treatment from doctor",
+    "description": "Bacterial infection of the urinary tract causing burning, frequency, and urgency."
   },
   {
-    "keywords": ["dizziness", "fainting", "lightheaded"],
-    "condition": "Low blood pressure or dehydration",
-    "medication": "Oral rehydration",
-    "advice": "Lie down, elevate legs, hydrate. Seek care if persistent."
+    "keywords": ["dizziness", "fainting", "lightheaded", "vertigo"],
+    "condition": "Dizziness/Orthostatic hypotension",
+    "severity": "mild-moderate",
+    "category": "cardiovascular",
+    "medication": [
+      {
+        "name": "Oral rehydration solutions",
+        "dosage": "Increase fluid intake gradually",
+        "warnings": ["Avoid sudden position changes"]
+      }
+    ],
+    "advice": "Lie down with legs elevated, stay hydrated, rise slowly from sitting/lying position.",
+    "red_flags": ["fainting episodes", "chest pain", "difficulty speaking", "weakness"],
+    "duration": "Should improve with hydration and position changes",
+    "description": "Feeling of unsteadiness or lightheadedness, often due to blood pressure changes."
   },
   {
-    "keywords": ["wheezing", "shortness of breath", "cough"],
+    "keywords": ["wheezing", "shortness of breath", "asthma", "breathing difficulty"],
     "condition": "Asthma exacerbation",
-    "medication": "Albuterol inhaler",
-    "advice": "Use inhaler; seek care if not improving."
+    "severity": "moderate-severe",
+    "category": "respiratory",
+    "medication": [
+      {
+        "name": "Albuterol inhaler (if prescribed)",
+        "dosage": "2 puffs every 4-6 hours as needed",
+        "warnings": ["If no improvement or worsening, seek immediate care"]
+      }
+    ],
+    "advice": "Use rescue inhaler as directed, sit upright, stay calm, avoid triggers.",
+    "red_flags": ["inability to speak in full sentences", "blue lips/fingernails", "no improvement with inhaler"],
+    "duration": "Should improve within 15-30 minutes of inhaler use",
+    "description": "Narrowing of airways causing difficulty breathing, wheezing, and chest tightness."
   },
   {
-    "keywords": ["back pain", "stiffness", "muscle spasm"],
+    "keywords": ["back pain", "stiffness", "muscle spasm", "lower back"],
+    "condition": "Acute lower back pain",
+    "severity": "mild-moderate",
+    "category": "musculoskeletal",
+    "medication": [
+      {
+        "name": "Ibuprofen (Advil)",
+        "dosage": "400mg every 6-8 hours",
+        "warnings": ["Take with food", "Maximum 1200mg daily"]
+      }
+    ],
+    "advice": "Apply ice for first 48 hours, then heat. Gentle stretching, avoid bed rest, stay active as tolerated.",
+    "red_flags": ["numbness/tingling in legs", "loss of bladder control", "severe leg weakness"],
+    "duration": "Most episodes resolve within 2-6 weeks",
+    "description": "Pain and stiffness in the lower back, often due to muscle strain or minor injury."
+  }
+]
     "condition": "Acute back strain",
     "medication": "Ibuprofen, heat/ice",
     "advice": "Gentle movement, avoid heavy lifting."

@@ -26,3 +26,12 @@ application-prod.properties
 # Logs
 *.log
 logs/
+
+# Keep .gitattributes local only
+.gitattributes
+
+# Local documentation and development files
+DEVELOPMENT_SETUP.md
+ENHANCEMENT_SUMMARY.md
+START_MANUAL.md
+start-dev.sh
