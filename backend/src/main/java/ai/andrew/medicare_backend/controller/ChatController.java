@@ -12,7 +12,9 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.UUID;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Safelist;
 
 /**
  * ChatController handles chat endpoints for the Medicare AI chatbot.
@@ -37,16 +39,21 @@ public class ChatController {
         this.conditionService = conditionService;
     }
     
+    private static final int MAX_INPUT_LENGTH = 1000;
+
     /**
      * Input sanitization helper method
      */
     private String sanitizeInput(String input) {
-        if (input == null) return "";
-        
-        return input.trim()
-                   .replaceAll("<script.*?>.*?</script>", "")
-                   .replaceAll("<.*?>", "")
-                   .substring(0, Math.min(input.length(), 1000)); // Limit to 1000 chars
+        if (input == null) {
+            return "";
+        }
+
+        String cleaned = Jsoup.clean(input, Safelist.none()).trim();
+        if (cleaned.length() <= MAX_INPUT_LENGTH) {
+            return cleaned;
+        }
+        return cleaned.substring(0, MAX_INPUT_LENGTH);
     }
 
     /**

@@ -1,9 +1,15 @@
 package ai.andrew.medicare_backend.service;
 
+import java.time.Duration;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import io.netty.channel.ChannelOption;
+import reactor.netty.http.client.HttpClient;
+import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 
 /**
  * TranslationService
@@ -20,14 +26,19 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 public class TranslationService {
 
-    @Value("${libretranslate.url:https://libretranslate.de}")
-    private String baseUrl;
-
     private final WebClient client;
 
-    public TranslationService() {
-        this.client = WebClient.builder()
+    public TranslationService(
+            @Value("${libretranslate.url:https://libretranslate.de}") String baseUrl,
+            WebClient.Builder builder) {
+        HttpClient httpClient = HttpClient.create()
+                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
+                .responseTimeout(Duration.ofSeconds(12));
+
+        this.client = builder
+                .clone()
                 .baseUrl(baseUrl)
+                .clientConnector(new ReactorClientHttpConnector(httpClient))
                 .build();
     }
 
@@ -50,16 +61,25 @@ public class TranslationService {
          * and replies:
          *   { "translatedText":"..." }
          */
-        return client.post()
-                .uri("/translate")
-                .contentType(MediaType.APPLICATION_JSON)
-                .bodyValue("""
-                    { "q":"%s", "source":"%s", "target":"%s", "format":"text" }
-                    """.formatted(escape(q), source, target))
-                .retrieve()
-                .bodyToMono(Json.class)      // small record below
-                .block()                     // convert reactive → blocking
-                .translatedText();
+        try {
+            Json response = client.post()
+                    .uri("/translate")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .bodyValue("""
+                        { "q":"%s", "source":"%s", "target":"%s", "format":"text" }
+                        """.formatted(escape(q), source, target))
+                    .retrieve()
+                    .bodyToMono(Json.class)      // small record below
+                    .timeout(Duration.ofSeconds(12))
+                    .block();                     // convert reactive → blocking
+
+            return response != null && response.translatedText() != null
+                    ? response.translatedText()
+                    : q;
+        } catch (Exception ex) {
+            // Fall back to the original text when the translation service is unavailable
+            return q;
+        }
     }
 
     /** small local record for JSON mapping */
