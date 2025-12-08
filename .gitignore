@@ -14,6 +14,9 @@ backend/bin/
 .env
 .env.local
 .env.*.local
+backend/.env
+backend/.env.local
+.envrc
 application-local.properties
 application-dev.properties
 application-prod.properties
