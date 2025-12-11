@@ -243,11 +243,6 @@ function App() {
     <main style={{
       minHeight: '100vh',
       background: palette.background,
-      backgroundImage: theme === 'light'
-        ? 'radial-gradient(circle, #d1eaff 1px, transparent 1px), radial-gradient(circle, #b6e2d3 1px, transparent 1px)'
-        : 'radial-gradient(circle, #393e46 1px, transparent 1px), radial-gradient(circle, #232946 1px, transparent 1px)',
-      backgroundSize: '28px 28px',
-      backgroundPosition: '0 0, 14px 14px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
